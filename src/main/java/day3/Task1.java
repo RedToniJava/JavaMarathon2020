@@ -6,7 +6,7 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i > -1; i++) {
+        while (true) {
             String city = scanner.nextLine();
             if (!city.equals("Stop")) {
 
@@ -35,7 +35,7 @@ public class Task1 {
                         System.out.println("Неизвестная страна");
                         break;
                 }
-                continue;
+
             }
             if (city.equals("Stop")) break;
         }

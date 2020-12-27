@@ -16,7 +16,7 @@ public class Task3 {
                 continue;
             }
             System.out.println(result);
-            continue;
+
 
         }
 

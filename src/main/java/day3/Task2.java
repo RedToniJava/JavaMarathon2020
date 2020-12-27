@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i > -1; i++) {
+        for (;;) {
             double a = scanner.nextDouble();
             double b = scanner.nextDouble();
             double result = a / b;
