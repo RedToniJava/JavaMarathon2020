@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Task3 {
     public static void main(String[] args) {
-
         int[][] array = new int[12][8];
         Random rand = new Random();
 

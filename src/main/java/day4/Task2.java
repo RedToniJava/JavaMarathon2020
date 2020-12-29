@@ -16,21 +16,24 @@ public class Task2 {
             array[i] = rand.nextInt(10000);
             if (array[i] % 10 == 0) {
                 array0Sum = array0Sum + array[i];
+
             }
         }
         System.out.println(Arrays.toString(array));
-        for (int i : array) {
-            if (i > max) max = i;
-        }
 
         for (int i : array) {
+            if (i > max) max = i;
             if (i < min) min = i;
+        }
+        for (int i = 0; i < 100; i++) {
+            if (array[i] % 10 == 0) {
+                array0++;
+            }
         }
         System.out.println(max + " - наибольший элемент массива");
         System.out.println(min + " - наименьший элемент массива");
         System.out.println(array0 + " - количество элементов массива, оканчивающихся на 0");
         System.out.println(array0Sum + " - сумму элементов массива, оканчивающихся на 0");
-
 
     }
 }
