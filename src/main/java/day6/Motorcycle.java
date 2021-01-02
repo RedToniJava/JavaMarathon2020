@@ -16,12 +16,10 @@ class Motorcycle {
     }
 
     void yearDifference(int inputYear) {
-
         inputYear = 2020 - inputYear;
         if (inputYear >= 0) System.out.println("Мотоциклу " + inputYear);
-        if (inputYear < 0) System.out.println("Введен неверный год");
+        if (inputYear < 0) System.out.println(Math.abs(inputYear));
 
     }
-
 
 }

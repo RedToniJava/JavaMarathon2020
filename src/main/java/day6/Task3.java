@@ -41,26 +41,31 @@ class Teacher {
 
     void evaluate(String nameStud) {
         int evaluation = rand.nextInt(4) + 2;
-        if (evaluation == 2)
-            System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " на неудовлетворительно");
-        if (evaluation == 3)
-            System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " на удовлетворительно");
-        if (evaluation == 4)
-            System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " на хорошо");
-        if (evaluation == 5)
-            System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " на отлично");
+        String non = "неудовлетворительно";
+        String three = "удовлетворительно";
+        String four = "хорошо";
+        String five = "отлично";
+        switch (evaluation) {
+            case 2:
+                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + non);
+                break;
+            case 3:
+                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + three);
+                break;
+            case 4:
+                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + four);
+                break;
+            case 5:
+                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + five);
+                break;
+        }
 
     }
-
 
 }
 
 class Student {
     private String name;
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getName() {
         return name;

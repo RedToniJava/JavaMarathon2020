@@ -58,7 +58,7 @@ class Airplane {
     }
 
     void fullUp(int n) {
-        fuel = n;
+        fuel += n;
 
     }
 

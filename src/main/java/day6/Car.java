@@ -18,7 +18,7 @@ class Car {
     void yearDifference(int inputYear) {
         inputYear = 2020 - inputYear;
         if (inputYear >= 0) System.out.println("Машине " + inputYear);
-        if (inputYear < 0) System.out.println("Введен неверный год");
+        if (inputYear < 0) System.out.println(Math.abs(inputYear));
 
     }
 
