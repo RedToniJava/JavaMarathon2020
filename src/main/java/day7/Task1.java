@@ -4,9 +4,8 @@ import java.io.OutputStream;
 
 public class Task1 {
     public static void main(String[] args) {
-        Airplane LaGG = new Airplane("ЛаГГ", 1941, 8.81, 2680, 0);
-        Airplane Jak3 = new Airplane("Як3", 1942, 9.22, 2658, 0);
-
+        Airplane LaGG = new Airplane("ЛаГГ", 1941, 9, 2680, 0);
+        Airplane Jak3 = new Airplane("Як3", 1942, 9, 2658, 0);
         LaGG.info();
         Jak3.info();
         Airplane.compareAirplane(LaGG, Jak3);
@@ -76,6 +75,7 @@ class Airplane {
     public static void compareAirplane(Airplane airplane1, Airplane airplane2) {
         if (airplane1.getLength() > airplane2.getLength()) System.out.println(airplane1.getProducer() + " - длиннее");
         if (airplane2.getLength() > airplane1.getLength()) System.out.println(airplane2.getProducer() + " - длиннее");
+        if (airplane2.getLength() == airplane1.getLength()) System.out.println("длины равны");
 
     }
 }

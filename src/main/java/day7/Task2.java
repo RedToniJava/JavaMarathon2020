@@ -27,8 +27,8 @@ public class Task2 {
 class Player {
     private int stamina;
     private static int countPlayers;
-    private final int maxStamina = 100;
-    private final int minStamina = 0;
+    private final int MAX_STAMINA = 100;
+    private final int MIN_STAMINA = 0;
     private static final int maxPlayers = 6;
 
     public int getStamina() {
@@ -48,10 +48,11 @@ class Player {
     }
 
     public void run() {
-        if (stamina == minStamina) {
-            countPlayers--;
-        }
         stamina--;
+        if (stamina == MIN_STAMINA) {
+            countPlayers--;
+            return;
+        }
     }
 
     public static void info() {

@@ -54,10 +54,8 @@ class Airplane {
     }
 
     public String toString() {
-
         return "Изготовитель: " + producer + "; год выпуска: " + year + "; длинна: " + length + "; вес: " + weight;
     }
-
 
     void info() {
         System.out.println("Изготовитель: " + producer + "; год выпуска: " + year + "; длинна: " + length + "; вес: " + weight);

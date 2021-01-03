@@ -38,28 +38,24 @@ class Teacher {
         this.educationSubject = educationSubject;
     }
 
-
     void evaluate(String nameStud) {
         int evaluation = rand.nextInt(4) + 2;
-        String non = "неудовлетворительно";
-        String three = "удовлетворительно";
-        String four = "хорошо";
-        String five = "отлично";
+        String mark = "оценка";
         switch (evaluation) {
             case 2:
-                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + non);
+                mark = "неудовлетворительно";
                 break;
             case 3:
-                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + three);
+                mark = "удовлетворительно";
                 break;
             case 4:
-                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + four);
+                mark = "хорошо";
                 break;
             case 5:
-                System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + five);
+                mark = "отлично";
                 break;
         }
-
+        System.out.println("Преподователь " + getName() + " оценил студента " + nameStud + " по предмету " + getEducationSubject() + " " + mark);
     }
 
 }
