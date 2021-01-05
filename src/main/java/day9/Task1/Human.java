@@ -13,6 +13,6 @@ class Human {
     }
 
     public void printInfo() {
-        System.out.println("Это человек по имени "+getName());
+        System.out.println("Это человек по имени " + getName());
     }
 }
