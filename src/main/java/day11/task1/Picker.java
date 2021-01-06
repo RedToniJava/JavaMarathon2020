@@ -18,11 +18,8 @@ public class Picker implements Worker {
         return isPayed;
     }
 
-    public Picker(Warehouse warehouse, int salary, boolean isPayed) {
-        this.salary = salary;
-        this.isPayed = isPayed;
+    public Picker(Warehouse warehouse) {
         this.warehouse = warehouse;
-
 
     }
 
@@ -33,8 +30,7 @@ public class Picker implements Worker {
     public void doWork() {
         salary += 80;
         count++;
-        warehouse.setCountPickedOrders(count);
-
+        warehouse.sumCountPickedOrders();
     }
 
     @Override
@@ -49,7 +45,6 @@ public class Picker implements Worker {
         if (count < 10000) {
             System.out.println("Бонус пока не доступен");
         }
-
 
     }
 }

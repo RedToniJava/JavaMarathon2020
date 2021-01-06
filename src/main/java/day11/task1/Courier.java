@@ -18,9 +18,7 @@ public class Courier implements Worker {
         return isPayed;
     }
 
-    public Courier(Warehouse warehouse, int salary, boolean isPayed) {
-        this.salary = salary;
-        this.isPayed = isPayed;
+    public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
 
@@ -32,8 +30,7 @@ public class Courier implements Worker {
     public void doWork() {
         salary += 100;
         count++;
-        warehouse.setCountPickedOrders(count);
-
+        warehouse.sumCountDeliveredOrders();
 
     }
 
