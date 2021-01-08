@@ -1,18 +1,28 @@
 package day13;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MessageDatabase {
-  private static List<Message> messages;
+    private static List<Message> messages = new ArrayList<>();
 
-  public static void addNewMessage(User u1,User u2, String text){
-    Date date= new Date();
-         messages.add(new Message(u1,u2,text,date));
+    public static void addNewMessage(User u1, User u2, String text) {
+        messages.add(new Message(u1, u2, text));
 
-  }
-  public static void showDialog(User u1,User u2){
-    System.out.println(u1.toString());
+    }
 
-  }
+    public static void showDialog(User u1, User u2) {
+        for (Message message : messages) {
+
+            if (message.getSender().equals(u1) && message.getReceiver().equals(u2)) {
+                System.out.println(u1.toString() + ": " + message.getText());
+            } else if (message.getSender().equals(u2) && message.getReceiver().equals(u1)){
+              System.out.println(u2.toString() + ": " + message.getText());
+            }
+
+        }
+
+    }
+
 }
+

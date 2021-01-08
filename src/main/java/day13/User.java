@@ -1,14 +1,21 @@
 package day13;
 
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import static day13.MessageDatabase.addNewMessage;
+import static day13.MessageDatabase.showDialog;
 
 public class User {
     private String name;
     private List<User> subscription;
+
+    public User(String name, List<User> subscription) {
+        this.name = name;
+        this.subscription = new ArrayList<>();
+
+    }
 
     public String getName() {
         return name;
@@ -18,11 +25,6 @@ public class User {
         return subscription;
     }
 
-    public User(String name, List<User> subscription) {
-        this.name = name;
-        this.subscription = new ArrayList<>();
-
-    }
 
     public void subscribe(User user) {
         getSubscription().add(user);
@@ -46,13 +48,17 @@ public class User {
     }
 
     public void sendMessage(User user, String text) {
-        Date date= new Date();
-        Message newMessage=new Message(user,user,text,date);
-               addNewMessage(user, user, text);
+       Message newMessage=new Message(this,user,text);
+               addNewMessage(this, user, text);
 
+    }
+
+    public  void vieu(User user){
+        showDialog( this, user);
     }
 
     public String toString() {
         return getName() + " ";
     }
+
 }

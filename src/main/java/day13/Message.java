@@ -3,11 +3,18 @@ package day13;
 import java.util.Date;
 
 public class Message {
-    User  sender;
-    User receiver;
-    String text;
-    Date date= new Date();
+    private User sender;
+    private User receiver;
+    private String text;
+    private Date date = new Date();
 
+    public Message(User sender, User receiver, String text) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.text = text;
+        Date date = new Date();
+
+    }
 
     public User getSender() {
         return sender;
@@ -21,24 +28,14 @@ public class Message {
         return text;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public Date getDate() {
         return date;
     }
-    public Message(User sender, User receiver, String text,Date date ){
-        this.sender=sender;
-        this.receiver=receiver;
-        this.text=text;
-        this.date=date;
 
-    }
-    public  String toString(){
-        return "FROM"+sender.toString()+
-                "TO"+receiver.toString()+
-                "ON"+date.toString()+
+    public String toString() {
+        return "FROM " + sender.toString() + "\n" +
+                "TO " + receiver.toString() + "\n" +
+                "ON " + date.toString() + "\n" +
                 getText();
     }
 }
