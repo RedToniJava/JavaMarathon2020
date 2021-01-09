@@ -9,13 +9,12 @@ import java.util.Scanner;
 public class Task3 {
     public static void main(String[] args) {
         File file1 = new File("people");
+
         System.out.println(parseFileToObjList(file1));
 
     }
 
     public static List<Human> parseFileToObjList(File file) {
-        Human person = new Human();
-
         List<Human> fileListString = new ArrayList<>();
 
         try {
@@ -24,12 +23,10 @@ public class Task3 {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] people = line.split(" ");
-                person.setName(people[0]);
 
                 if (Integer.parseInt(people[1]) < 0)
                     throw new IllegalArgumentException();
-                person.setYear(Integer.parseInt(people[1]));
-                fileListString.add(person);
+                fileListString.add(new Human(people[0], Integer.parseInt(people[1])));
             }
             return fileListString;
         } catch (FileNotFoundException e) {
