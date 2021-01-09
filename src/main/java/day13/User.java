@@ -1,11 +1,9 @@
 package day13;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import static day13.MessageDatabase.addNewMessage;
-import static day13.MessageDatabase.showDialog;
 
 public class User {
     private String name;
@@ -38,23 +36,19 @@ public class User {
 
     public boolean isFriend(User user1) {
         boolean isFriend = false;
-        for(User user : user1.getSubscription()){
-            if(user1.isSubscribed(user)&&user.isSubscribed(user1)){
-             isFriend=true;
-            }else isFriend=false;
+        for (User user : user1.getSubscription()) {
+            if (user1.isSubscribed(user) && user.isSubscribed(user1)) {
+                isFriend = true;
+            } else isFriend = false;
         }
         return isFriend;
 
     }
 
     public void sendMessage(User user, String text) {
-       Message newMessage=new Message(this,user,text);
-               addNewMessage(this, user, text);
+        Message newMessage = new Message(this, user, text);
+        addNewMessage(this, user, text);
 
-    }
-
-    public  void vieu(User user){
-        showDialog( this, user);
     }
 
     public String toString() {

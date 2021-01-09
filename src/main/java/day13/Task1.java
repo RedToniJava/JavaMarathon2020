@@ -21,19 +21,18 @@ public class Task1 {
         System.out.println(user1.isFriend(user2));
         user1.sendMessage(user2, "Hello");
         user1.sendMessage(user2, "How are you?");
-        user2.sendMessage(user1,"Hi");
-        user2.sendMessage(user1,"I`m fine");
-        user2.sendMessage(user1,"And you?");
-        user3.sendMessage(user1,"Good morning");
-        user3.sendMessage(user1,"May I am not go to school  tomorrow?");
-        user3.sendMessage(user1,"Please");
-        user1.sendMessage(user2, "Hi");
-        user1.sendMessage(user2, "No you not");
-        user1.sendMessage(user2, "You must learning");
+        user2.sendMessage(user1, "Hi");
+        user2.sendMessage(user1, "I`m fine");
+        user2.sendMessage(user1, "And you?");
+        user3.sendMessage(user1, "Good morning");
+        user3.sendMessage(user1, "May I am not go to school  tomorrow?");
+        user3.sendMessage(user1, "Please");
+        user1.sendMessage(user3, "Hi");
+        user1.sendMessage(user3, "No you not");
+        user1.sendMessage(user3, "You must learning");
         user3.sendMessage(user1, ":((");
 
-        user3.vieu(user1);
-
+        MessageDatabase.showDialog(user1, user3);
     }
 
 }
