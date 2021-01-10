@@ -12,26 +12,20 @@ public class Task1 {
             if (file.createNewFile()) System.out.println("Создан новй файл missing_shoes");
             PrintWriter printWriter = new PrintWriter("src/main/resources/missing_shoes.txt");
 
-            try {
-                BufferedReader br = new BufferedReader(new FileReader("src/main/resources/shoes.csv"));
-                String line1 = null;
+            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/shoes.csv"));
+            String line1 = null;
 
-                while ((line1 = br.readLine()) != null) {
+            while ((line1 = br.readLine()) != null) {
 
-                    Scanner scanner = new Scanner(line1);
-                    while (scanner.hasNextLine()) {
-                        String line = scanner.nextLine();
-                        String[] shoes = line.split(";");
+                Scanner scanner = new Scanner(line1);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    String[] shoes = line.split(";");
 
-                        if (Integer.parseInt(shoes[2]) == 0)
-                            printWriter.println(Arrays.toString(shoes));
-                    }
+                    if (Integer.parseInt(shoes[2]) == 0)
+                        printWriter.println(Arrays.toString(shoes));
                 }
-
-            } catch (FileNotFoundException e) {
-                System.out.println("File not found");
             }
-
             printWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
