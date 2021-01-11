@@ -24,25 +24,23 @@ public class Task2 {
             pw1.println(Arrays.toString(numbers1));
             pw1.close();
             System.out.println(Arrays.toString(numbers1));
-            List<Integer>listNumbers1=new ArrayList<>();
+            List<Integer> listNumbers1 = new ArrayList<>();
             for (int i = 0; i < numbers1.length; i++) {
-            listNumbers1.add(numbers1[i]);
+                listNumbers1.add(numbers1[i]);
             }
             double[] numbers2 = new double[50];
-
-            for(int j=0;j<numbers2.length;j++){
-                double meanSum=0;
-            for (int i=0;i<19;i++) {
-                meanSum+=listNumbers1.get(i);
-                listNumbers1.remove(i);
-                      }
-            numbers2[j]=meanSum/20;
-
+            PrintWriter pw2 = new PrintWriter(file2);
+            for (int j = 0; j < numbers2.length; j++) {
+                double meanSum = 0;
+                for (int i = 0; i < 20; i++) {
+                    meanSum += listNumbers1.get(i);
+                    listNumbers1.remove(i);
+                }
+                numbers2[j] = meanSum / 20;
+                pw2.println(numbers2[j]);
             }
             System.out.println(Arrays.toString(numbers2));
 
-            PrintWriter pw2 = new PrintWriter(file2);
-            pw2.println(Arrays.toString(numbers2));
             pw2.close();
 
         } catch (IOException e) {
@@ -51,27 +49,28 @@ public class Task2 {
         printResult(file2);
 
     }
-    public static void printResult(File file){
+
+    public static void printResult(File file) {
 
         try {
             Scanner scanner = new Scanner(file);
             String line = scanner.nextLine();
             String[] numbersString = line.split(", ");
-                System.out.println(Arrays.toString(numbersString));
-         double[] numbers = new double[50];
-           int number=0;
-          for (String numb : numbersString) {
+            System.out.println(Arrays.toString(numbersString));
+            double[] numbers = new double[50];
+            int number = 0;
+            for (String numb : numbersString) {
                 numbers[number++] = Double.parseDouble(numb);
             }
-         double sum=0;
-          for(int i=0;i<numbers.length;i++){
-              sum+=numbers[i];
-          }
-          int allSum=(int)sum;
+            double sum = 0;
+            for (int i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            int allSum = (int) sum;
 
             System.out.println(allSum);
         } catch (FileNotFoundException e) {
-           System.out.println("File not found");
+            System.out.println("File not found");
         }
 
     }
