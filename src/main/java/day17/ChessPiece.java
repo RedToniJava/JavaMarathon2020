@@ -14,5 +14,9 @@ public enum ChessPiece {
     public String getSymbol() {
         return symbol;
     }
+    public String toString(){
+        return symbol;
+    }
+
 
 }

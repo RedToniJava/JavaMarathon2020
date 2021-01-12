@@ -8,7 +8,7 @@ public class Task1 {
         String[] piece = new String[8];
         for (int i = 0; i < 8; i++) {
             if (i < 4) piece[i] = pawnWhite.getSymbol();
-            if (i > 3) piece[i] = rookBlack.getSymbol();
+            else piece[i] = rookBlack.getSymbol();
             System.out.print(piece[i] + " ");
 
         }
