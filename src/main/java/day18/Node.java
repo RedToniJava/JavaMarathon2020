@@ -8,6 +8,18 @@ public class Node {
         this.node=node;
             }
 
+    public void setRightSon(int rightSon) {
+        this.rightSon = rightSon;
+    }
+
+    public void setLeftSon(int leftSon) {
+        this.leftSon = leftSon;
+    }
+
+    public void setNode(int node) {
+        this.node = node;
+    }
+
     public int getNode() {
         return node;
     }
